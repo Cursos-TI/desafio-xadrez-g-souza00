@@ -36,6 +36,7 @@ int main() {
         {
             printf("Esquerda \n");
         }
+        break;
         
             
     default:
