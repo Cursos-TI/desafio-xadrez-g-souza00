@@ -14,15 +14,16 @@ int main() {
     printf("1. Torre \n");
     printf("2. Bispo \n");
     printf("3. Rainha \n");
+    printf("4. Cavalo \n");
     scanf("%d", &escolha);
 
     // Entende qual escolha foi feita e roda o código apropriado
     switch (escolha)
     {
     case 1:
-    for ( int i = 0; i < 5 ; i++) // Código para mover a torre para cima enquanto i for menor do que 5
+    for ( int i = 1; i < 5 ; i++) // Código para mover a torre para cima enquanto i for menor do que 5
     {
-        printf("Cima \n");
+        printf("%d \n", i);
     }
         break;
         case 2:
@@ -36,9 +37,23 @@ int main() {
         {
             printf("Esquerda \n");
         }
-        break;
+        case 4:
+            for ( int i = 1; i <= 2; i++){ // Enquanto i for menor ou igual a 2 o loop roda e incrementa i
+        for (int j = 1; j < 2; j++) // Enquanto j for menor do que 2 baixo é impresso e j é incrementado
+        {
+            printf("Baixo \n");
+        }
         
-            
+    }
+
+        for (int k = 1; k <= 1; k++){ // mesma lógica do outro loop
+            for (int e = 1; e < 2; e++)
+        {
+            printf("Esquerda \n");
+        }
+        
+    }   
+        break;         
     default:
         printf("Opção inválida");
 
