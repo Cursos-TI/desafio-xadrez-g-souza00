@@ -4,6 +4,35 @@
 // Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
 // O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
 
+
+void movertorre(int casas){ // Cria uma função recursiva com a váriavel casas
+    if (casas > 0){ // Enquanto casas for maior do que 0, imprime cima e decrementa em 1, quando chegar a 0 o loop encerra
+        printf("Cima \n");
+        movertorre(casas - 1);
+    }
+
+}
+
+void moverbispo(int casas2){ // Cria uma função recursiva com a váriavel casas2
+    for(casas2; casas2 > 0; casas2--){ // Se casas2 for maior do que zero o loop roda (nesse caso cinco vezes)
+        for (int e = 1; e > 0; e--)// Cria a váriavel e, se e for maior do que 0, e é decrementado
+        {
+            printf("Direita "); // Loop interno imprime direita
+        }printf( "Cima \n"); // Imprime cima
+
+    }
+    
+}
+
+
+void moverrainha(int casas3){
+    if (casas3 > 0){
+        printf("Esquerda \n");
+        moverrainha(casas3 - 1);
+    }
+
+}
+
 int main() {
 
     //Armazena a escolha
@@ -21,38 +50,23 @@ int main() {
     switch (escolha)
     {
     case 1:
-    for ( int i = 1; i < 5 ; i++) // Código para mover a torre para cima enquanto i for menor do que 5
-    {
-        printf("%d \n", i);
-    }
+    movertorre(5);
         break;
         case 2:
-        for ( int i = 0; i < 5; i++) // Move para cima e para direita
-        {
-            printf("Cima e direita \n");
-        }
+        moverbispo(5); // Chama a recursiva e passa o número 5 para ela
+
         break;
         case 3:
-        for (int i = 0; i < 5; i++) // Move para a esquerda
-        {
-            printf("Esquerda \n");
-        }
+        moverrainha(5); 
+        break;
         case 4:
-            for ( int i = 1; i <= 2; i++){ // Enquanto i for menor ou igual a 2 o loop roda e incrementa i
-        for (int j = 1; j < 2; j++) // Enquanto j for menor do que 2 baixo é impresso e j é incrementado
-        {
-            printf("Baixo \n");
-        }
-        
-    }
+            for (int i = 2; i > 0; i--){ //Enquanto i for maior que 0, i é decrementado
+                if(i == 0) break; // Se i for igual a 0 Cima não é mais impresso
+                printf("Cima \n");
 
-        for (int k = 1; k <= 1; k++){ // mesma lógica do outro loop
-            for (int e = 1; e < 2; e++)
-        {
-            printf("Esquerda \n");
-        }
-        
-    }   
+
+            }printf("Direita \n"); // No fim do loop Direita é impresso
+                   
         break;         
     default:
         printf("Opção inválida");
@@ -62,3 +76,4 @@ int main() {
 
     return 0;
 }
+
